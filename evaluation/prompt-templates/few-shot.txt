@@ -1,0 +1,66 @@
+Here are a few examples:
+
+Example prompt 1: Create an AWS RDS instance with randomly generated id and password
+Example output 1: 
+```hcl
+resource "random_id" "suffix" {
+  byte_length = 4
+}
+
+resource "random_password" "db" {
+  length  = 16
+  special = false
+}
+
+resource "aws_db_instance" "test" {
+  identifier          = "metricbeat-test-${random_id.suffix.hex}"
+  allocated_storage   = 20 // Gigabytes
+  engine              = "mysql"
+  instance_class      = "db.t2.micro"
+  db_name                = "metricbeattest"
+  username            = "foo"
+  password            = random_password.db.result
+  skip_final_snapshot = true // Required for cleanup
+}
+```
+
+Example prompt 2: Create an 20GB MySQL instance on aws with randomly generated id and password
+Example output 2: 
+```hcl
+resource "random_id" "suffix" {
+  byte_length = 4
+}
+
+resource "random_password" "db" {
+  length  = 16
+  special = false
+}
+
+resource "aws_db_instance" "test" {
+  identifier          = "metricbeat-test-${random_id.suffix.hex}"
+  allocated_storage   = 20 // Gigabytes
+  engine              = "mysql"
+  instance_class      = "db.t2.micro"
+  db_name                = "metricbeattest"
+  username            = "foo"
+  password            = random_password.db.result
+  skip_final_snapshot = true // Required for cleanup
+}
+```
+
+Example prompt 3: create a AWS EFS, and create a replica of an this created EFS file system using regional storage in us-west-3
+Example output 3: 
+```hcl
+resource "aws_efs_file_system" "example" {}
+
+resource "aws_efs_replication_configuration" "example" {
+  source_file_system_id = aws_efs_file_system.example.id
+
+  destination {
+    availability_zone_name = "us-west-2b"
+    kms_key_id             = "1234abcd-12ab-34cd-56ef-1234567890ab"
+  }
+}
+```
+
+Here is the actual prompt to answer:

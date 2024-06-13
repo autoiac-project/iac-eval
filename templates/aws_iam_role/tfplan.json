@@ -1,0 +1,131 @@
+{
+    "format_version": "1.2",
+    "terraform_version": "1.5.7",
+    "planned_values": {
+        "root_module": {
+            "resources": [
+                {
+                    "address": "aws_iam_role.test_role",
+                    "mode": "managed",
+                    "type": "aws_iam_role",
+                    "name": "test_role",
+                    "provider_name": "registry.terraform.io/hashicorp/aws",
+                    "schema_version": 0,
+                    "values": {
+                        "assume_role_policy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ec2.amazonaws.com\"},\"Sid\":\"\"}],\"Version\":\"2012-10-17\"}",
+                        "description": "test role for templating",
+                        "force_detach_policies": false,
+                        "max_session_duration": 3600,
+                        "name": "test_role",
+                        "path": "/",
+                        "permissions_boundary": null,
+                        "tags": {
+                            "tag-key": "tag-value"
+                        },
+                        "tags_all": {
+                            "tag-key": "tag-value"
+                        }
+                    },
+                    "sensitive_values": {
+                        "inline_policy": [],
+                        "managed_policy_arns": [],
+                        "tags": {},
+                        "tags_all": {}
+                    }
+                }
+            ]
+        }
+    },
+    "resource_changes": [
+        {
+            "address": "aws_iam_role.test_role",
+            "mode": "managed",
+            "type": "aws_iam_role",
+            "name": "test_role",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "assume_role_policy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ec2.amazonaws.com\"},\"Sid\":\"\"}],\"Version\":\"2012-10-17\"}",
+                    "description": "test role for templating",
+                    "force_detach_policies": false,
+                    "max_session_duration": 3600,
+                    "name": "test_role",
+                    "path": "/",
+                    "permissions_boundary": null,
+                    "tags": {
+                        "tag-key": "tag-value"
+                    },
+                    "tags_all": {
+                        "tag-key": "tag-value"
+                    }
+                },
+                "after_unknown": {
+                    "arn": true,
+                    "create_date": true,
+                    "id": true,
+                    "inline_policy": true,
+                    "managed_policy_arns": true,
+                    "name_prefix": true,
+                    "tags": {},
+                    "tags_all": {},
+                    "unique_id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {
+                    "inline_policy": [],
+                    "managed_policy_arns": [],
+                    "tags": {},
+                    "tags_all": {}
+                }
+            }
+        }
+    ],
+    "configuration": {
+        "provider_config": {
+            "aws": {
+                "name": "aws",
+                "full_name": "registry.terraform.io/hashicorp/aws"
+            }
+        },
+        "root_module": {
+            "resources": [
+                {
+                    "address": "aws_iam_role.test_role",
+                    "mode": "managed",
+                    "type": "aws_iam_role",
+                    "name": "test_role",
+                    "provider_config_key": "aws",
+                    "expressions": {
+                        "assume_role_policy": {},
+                        "description": {
+                            "constant_value": "test role for templating"
+                        },
+                        "force_detach_policies": {
+                            "constant_value": false
+                        },
+                        "max_session_duration": {
+                            "constant_value": 3600
+                        },
+                        "name": {
+                            "constant_value": "test_role"
+                        },
+                        "path": {
+                            "constant_value": "/"
+                        },
+                        "tags": {
+                            "constant_value": {
+                                "tag-key": "tag-value"
+                            }
+                        }
+                    },
+                    "schema_version": 0
+                }
+            ]
+        }
+    },
+    "timestamp": "2023-12-20T16:39:10Z"
+}

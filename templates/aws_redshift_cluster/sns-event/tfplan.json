@@ -1,0 +1,577 @@
+{
+    "format_version": "1.2",
+    "terraform_version": "1.6.6",
+    "planned_values": {
+        "root_module": {
+            "resources": [
+                {
+                    "address": "aws_redshift_cluster.example",
+                    "mode": "managed",
+                    "type": "aws_redshift_cluster",
+                    "name": "example",
+                    "provider_name": "registry.terraform.io/hashicorp/aws",
+                    "schema_version": 0,
+                    "values": {
+                        "allow_version_upgrade": true,
+                        "apply_immediately": false,
+                        "automated_snapshot_retention_period": 1,
+                        "availability_zone_relocation_enabled": null,
+                        "cluster_identifier": "tf-redshift-cluster",
+                        "cluster_type": "single-node",
+                        "cluster_version": "1.0",
+                        "database_name": "mydb",
+                        "elastic_ip": null,
+                        "encrypted": false,
+                        "final_snapshot_identifier": null,
+                        "logging": [],
+                        "maintenance_track_name": "current",
+                        "manage_master_password": null,
+                        "manual_snapshot_retention_period": -1,
+                        "master_password": "Mustbe8characters",
+                        "master_username": "exampleuser",
+                        "node_type": "ra3.xlplus",
+                        "number_of_nodes": 1,
+                        "owner_account": null,
+                        "port": 5439,
+                        "publicly_accessible": true,
+                        "skip_final_snapshot": true,
+                        "snapshot_arn": null,
+                        "snapshot_cluster_identifier": null,
+                        "snapshot_copy": [],
+                        "snapshot_identifier": null,
+                        "tags": null,
+                        "timeouts": null
+                    },
+                    "sensitive_values": {
+                        "cluster_nodes": [],
+                        "iam_roles": [],
+                        "logging": [],
+                        "snapshot_copy": [],
+                        "tags_all": {},
+                        "vpc_security_group_ids": []
+                    }
+                },
+                {
+                    "address": "aws_redshift_event_subscription.default",
+                    "mode": "managed",
+                    "type": "aws_redshift_event_subscription",
+                    "name": "default",
+                    "provider_name": "registry.terraform.io/hashicorp/aws",
+                    "schema_version": 0,
+                    "values": {
+                        "enabled": true,
+                        "event_categories": [
+                            "configuration",
+                            "management",
+                            "monitoring",
+                            "security"
+                        ],
+                        "name": "redshift-event-sub",
+                        "severity": "INFO",
+                        "source_type": "cluster-parameter-group",
+                        "tags": {
+                            "Name": "default"
+                        },
+                        "tags_all": {
+                            "Name": "default"
+                        },
+                        "timeouts": null
+                    },
+                    "sensitive_values": {
+                        "event_categories": [
+                            false,
+                            false,
+                            false,
+                            false
+                        ],
+                        "source_ids": [],
+                        "tags": {},
+                        "tags_all": {}
+                    }
+                },
+                {
+                    "address": "aws_redshift_parameter_group.bar",
+                    "mode": "managed",
+                    "type": "aws_redshift_parameter_group",
+                    "name": "bar",
+                    "provider_name": "registry.terraform.io/hashicorp/aws",
+                    "schema_version": 0,
+                    "values": {
+                        "description": "Managed by Terraform",
+                        "family": "redshift-1.0",
+                        "name": "parameter-group-test-terraform",
+                        "parameter": [
+                            {
+                                "name": "enable_user_activity_logging",
+                                "value": "true"
+                            },
+                            {
+                                "name": "query_group",
+                                "value": "example"
+                            },
+                            {
+                                "name": "require_ssl",
+                                "value": "true"
+                            }
+                        ],
+                        "tags": null
+                    },
+                    "sensitive_values": {
+                        "parameter": [
+                            {},
+                            {},
+                            {}
+                        ],
+                        "tags_all": {}
+                    }
+                },
+                {
+                    "address": "aws_sns_topic.default",
+                    "mode": "managed",
+                    "type": "aws_sns_topic",
+                    "name": "default",
+                    "provider_name": "registry.terraform.io/hashicorp/aws",
+                    "schema_version": 0,
+                    "values": {
+                        "application_failure_feedback_role_arn": null,
+                        "application_success_feedback_role_arn": null,
+                        "application_success_feedback_sample_rate": null,
+                        "archive_policy": null,
+                        "content_based_deduplication": false,
+                        "delivery_policy": null,
+                        "display_name": null,
+                        "fifo_topic": false,
+                        "firehose_failure_feedback_role_arn": null,
+                        "firehose_success_feedback_role_arn": null,
+                        "firehose_success_feedback_sample_rate": null,
+                        "http_failure_feedback_role_arn": null,
+                        "http_success_feedback_role_arn": null,
+                        "http_success_feedback_sample_rate": null,
+                        "kms_master_key_id": null,
+                        "lambda_failure_feedback_role_arn": null,
+                        "lambda_success_feedback_role_arn": null,
+                        "lambda_success_feedback_sample_rate": null,
+                        "name": "redshift-events",
+                        "sqs_failure_feedback_role_arn": null,
+                        "sqs_success_feedback_role_arn": null,
+                        "sqs_success_feedback_sample_rate": null,
+                        "tags": null
+                    },
+                    "sensitive_values": {
+                        "tags_all": {}
+                    }
+                }
+            ]
+        }
+    },
+    "resource_changes": [
+        {
+            "address": "aws_redshift_cluster.example",
+            "mode": "managed",
+            "type": "aws_redshift_cluster",
+            "name": "example",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "allow_version_upgrade": true,
+                    "apply_immediately": false,
+                    "automated_snapshot_retention_period": 1,
+                    "availability_zone_relocation_enabled": null,
+                    "cluster_identifier": "tf-redshift-cluster",
+                    "cluster_type": "single-node",
+                    "cluster_version": "1.0",
+                    "database_name": "mydb",
+                    "elastic_ip": null,
+                    "encrypted": false,
+                    "final_snapshot_identifier": null,
+                    "logging": [],
+                    "maintenance_track_name": "current",
+                    "manage_master_password": null,
+                    "manual_snapshot_retention_period": -1,
+                    "master_password": "Mustbe8characters",
+                    "master_username": "exampleuser",
+                    "node_type": "ra3.xlplus",
+                    "number_of_nodes": 1,
+                    "owner_account": null,
+                    "port": 5439,
+                    "publicly_accessible": true,
+                    "skip_final_snapshot": true,
+                    "snapshot_arn": null,
+                    "snapshot_cluster_identifier": null,
+                    "snapshot_copy": [],
+                    "snapshot_identifier": null,
+                    "tags": null,
+                    "timeouts": null
+                },
+                "after_unknown": {
+                    "aqua_configuration_status": true,
+                    "arn": true,
+                    "availability_zone": true,
+                    "cluster_namespace_arn": true,
+                    "cluster_nodes": true,
+                    "cluster_parameter_group_name": true,
+                    "cluster_public_key": true,
+                    "cluster_revision_number": true,
+                    "cluster_subnet_group_name": true,
+                    "default_iam_role_arn": true,
+                    "dns_name": true,
+                    "endpoint": true,
+                    "enhanced_vpc_routing": true,
+                    "iam_roles": true,
+                    "id": true,
+                    "kms_key_id": true,
+                    "logging": [],
+                    "master_password_secret_arn": true,
+                    "master_password_secret_kms_key_id": true,
+                    "preferred_maintenance_window": true,
+                    "snapshot_copy": [],
+                    "tags_all": true,
+                    "vpc_security_group_ids": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {
+                    "cluster_nodes": [],
+                    "iam_roles": [],
+                    "logging": [],
+                    "master_password": true,
+                    "snapshot_copy": [],
+                    "tags_all": {},
+                    "vpc_security_group_ids": []
+                }
+            }
+        },
+        {
+            "address": "aws_redshift_event_subscription.default",
+            "mode": "managed",
+            "type": "aws_redshift_event_subscription",
+            "name": "default",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "enabled": true,
+                    "event_categories": [
+                        "configuration",
+                        "management",
+                        "monitoring",
+                        "security"
+                    ],
+                    "name": "redshift-event-sub",
+                    "severity": "INFO",
+                    "source_type": "cluster-parameter-group",
+                    "tags": {
+                        "Name": "default"
+                    },
+                    "tags_all": {
+                        "Name": "default"
+                    },
+                    "timeouts": null
+                },
+                "after_unknown": {
+                    "arn": true,
+                    "customer_aws_id": true,
+                    "event_categories": [
+                        false,
+                        false,
+                        false,
+                        false
+                    ],
+                    "id": true,
+                    "sns_topic_arn": true,
+                    "source_ids": true,
+                    "status": true,
+                    "tags": {},
+                    "tags_all": {}
+                },
+                "before_sensitive": false,
+                "after_sensitive": {
+                    "event_categories": [
+                        false,
+                        false,
+                        false,
+                        false
+                    ],
+                    "source_ids": [],
+                    "tags": {},
+                    "tags_all": {}
+                }
+            }
+        },
+        {
+            "address": "aws_redshift_parameter_group.bar",
+            "mode": "managed",
+            "type": "aws_redshift_parameter_group",
+            "name": "bar",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "description": "Managed by Terraform",
+                    "family": "redshift-1.0",
+                    "name": "parameter-group-test-terraform",
+                    "parameter": [
+                        {
+                            "name": "enable_user_activity_logging",
+                            "value": "true"
+                        },
+                        {
+                            "name": "query_group",
+                            "value": "example"
+                        },
+                        {
+                            "name": "require_ssl",
+                            "value": "true"
+                        }
+                    ],
+                    "tags": null
+                },
+                "after_unknown": {
+                    "arn": true,
+                    "id": true,
+                    "parameter": [
+                        {},
+                        {},
+                        {}
+                    ],
+                    "tags_all": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {
+                    "parameter": [
+                        {},
+                        {},
+                        {}
+                    ],
+                    "tags_all": {}
+                }
+            }
+        },
+        {
+            "address": "aws_sns_topic.default",
+            "mode": "managed",
+            "type": "aws_sns_topic",
+            "name": "default",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "application_failure_feedback_role_arn": null,
+                    "application_success_feedback_role_arn": null,
+                    "application_success_feedback_sample_rate": null,
+                    "archive_policy": null,
+                    "content_based_deduplication": false,
+                    "delivery_policy": null,
+                    "display_name": null,
+                    "fifo_topic": false,
+                    "firehose_failure_feedback_role_arn": null,
+                    "firehose_success_feedback_role_arn": null,
+                    "firehose_success_feedback_sample_rate": null,
+                    "http_failure_feedback_role_arn": null,
+                    "http_success_feedback_role_arn": null,
+                    "http_success_feedback_sample_rate": null,
+                    "kms_master_key_id": null,
+                    "lambda_failure_feedback_role_arn": null,
+                    "lambda_success_feedback_role_arn": null,
+                    "lambda_success_feedback_sample_rate": null,
+                    "name": "redshift-events",
+                    "sqs_failure_feedback_role_arn": null,
+                    "sqs_success_feedback_role_arn": null,
+                    "sqs_success_feedback_sample_rate": null,
+                    "tags": null
+                },
+                "after_unknown": {
+                    "arn": true,
+                    "beginning_archive_time": true,
+                    "id": true,
+                    "name_prefix": true,
+                    "owner": true,
+                    "policy": true,
+                    "signature_version": true,
+                    "tags_all": true,
+                    "tracing_config": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {
+                    "tags_all": {}
+                }
+            }
+        }
+    ],
+    "configuration": {
+        "provider_config": {
+            "aws": {
+                "name": "aws",
+                "full_name": "registry.terraform.io/hashicorp/aws"
+            }
+        },
+        "root_module": {
+            "resources": [
+                {
+                    "address": "aws_redshift_cluster.example",
+                    "mode": "managed",
+                    "type": "aws_redshift_cluster",
+                    "name": "example",
+                    "provider_config_key": "aws",
+                    "expressions": {
+                        "cluster_identifier": {
+                            "constant_value": "tf-redshift-cluster"
+                        },
+                        "cluster_parameter_group_name": {
+                            "references": [
+                                "aws_redshift_parameter_group.bar.id",
+                                "aws_redshift_parameter_group.bar"
+                            ]
+                        },
+                        "cluster_type": {
+                            "constant_value": "single-node"
+                        },
+                        "database_name": {
+                            "constant_value": "mydb"
+                        },
+                        "master_password": {
+                            "constant_value": "Mustbe8characters"
+                        },
+                        "master_username": {
+                            "constant_value": "exampleuser"
+                        },
+                        "node_type": {
+                            "constant_value": "ra3.xlplus"
+                        },
+                        "skip_final_snapshot": {
+                            "constant_value": true
+                        }
+                    },
+                    "schema_version": 0
+                },
+                {
+                    "address": "aws_redshift_event_subscription.default",
+                    "mode": "managed",
+                    "type": "aws_redshift_event_subscription",
+                    "name": "default",
+                    "provider_config_key": "aws",
+                    "expressions": {
+                        "event_categories": {
+                            "constant_value": [
+                                "configuration",
+                                "management",
+                                "monitoring",
+                                "security"
+                            ]
+                        },
+                        "name": {
+                            "constant_value": "redshift-event-sub"
+                        },
+                        "severity": {
+                            "constant_value": "INFO"
+                        },
+                        "sns_topic_arn": {
+                            "references": [
+                                "aws_sns_topic.default.arn",
+                                "aws_sns_topic.default"
+                            ]
+                        },
+                        "source_ids": {
+                            "references": [
+                                "aws_redshift_parameter_group.bar.id",
+                                "aws_redshift_parameter_group.bar"
+                            ]
+                        },
+                        "source_type": {
+                            "constant_value": "cluster-parameter-group"
+                        },
+                        "tags": {
+                            "constant_value": {
+                                "Name": "default"
+                            }
+                        }
+                    },
+                    "schema_version": 0
+                },
+                {
+                    "address": "aws_redshift_parameter_group.bar",
+                    "mode": "managed",
+                    "type": "aws_redshift_parameter_group",
+                    "name": "bar",
+                    "provider_config_key": "aws",
+                    "expressions": {
+                        "family": {
+                            "constant_value": "redshift-1.0"
+                        },
+                        "name": {
+                            "constant_value": "parameter-group-test-terraform"
+                        },
+                        "parameter": [
+                            {
+                                "name": {
+                                    "constant_value": "require_ssl"
+                                },
+                                "value": {
+                                    "constant_value": "true"
+                                }
+                            },
+                            {
+                                "name": {
+                                    "constant_value": "query_group"
+                                },
+                                "value": {
+                                    "constant_value": "example"
+                                }
+                            },
+                            {
+                                "name": {
+                                    "constant_value": "enable_user_activity_logging"
+                                },
+                                "value": {
+                                    "constant_value": "true"
+                                }
+                            }
+                        ]
+                    },
+                    "schema_version": 0
+                },
+                {
+                    "address": "aws_sns_topic.default",
+                    "mode": "managed",
+                    "type": "aws_sns_topic",
+                    "name": "default",
+                    "provider_config_key": "aws",
+                    "expressions": {
+                        "name": {
+                            "constant_value": "redshift-events"
+                        }
+                    },
+                    "schema_version": 0
+                }
+            ]
+        }
+    },
+    "relevant_attributes": [
+        {
+            "resource": "aws_redshift_parameter_group.bar",
+            "attribute": [
+                "id"
+            ]
+        },
+        {
+            "resource": "aws_sns_topic.default",
+            "attribute": [
+                "arn"
+            ]
+        }
+    ],
+    "timestamp": "2024-01-04T04:48:23Z",
+    "errored": false
+}

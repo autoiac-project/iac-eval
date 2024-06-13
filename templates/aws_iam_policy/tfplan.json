@@ -1,0 +1,94 @@
+{
+    "format_version": "1.2",
+    "terraform_version": "1.5.7",
+    "planned_values": {
+        "root_module": {
+            "resources": [
+                {
+                    "address": "aws_iam_policy.policy",
+                    "mode": "managed",
+                    "type": "aws_iam_policy",
+                    "name": "policy",
+                    "provider_name": "registry.terraform.io/hashicorp/aws",
+                    "schema_version": 0,
+                    "values": {
+                        "description": "My test policy",
+                        "name": "test_policy",
+                        "path": "/",
+                        "policy": "{\"Statement\":[{\"Action\":[\"ec2:Describe*\"],\"Effect\":\"Allow\",\"Resource\":\"*\"}],\"Version\":\"2012-10-17\"}",
+                        "tags": null
+                    },
+                    "sensitive_values": {
+                        "tags_all": {}
+                    }
+                }
+            ]
+        }
+    },
+    "resource_changes": [
+        {
+            "address": "aws_iam_policy.policy",
+            "mode": "managed",
+            "type": "aws_iam_policy",
+            "name": "policy",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "description": "My test policy",
+                    "name": "test_policy",
+                    "path": "/",
+                    "policy": "{\"Statement\":[{\"Action\":[\"ec2:Describe*\"],\"Effect\":\"Allow\",\"Resource\":\"*\"}],\"Version\":\"2012-10-17\"}",
+                    "tags": null
+                },
+                "after_unknown": {
+                    "arn": true,
+                    "id": true,
+                    "name_prefix": true,
+                    "policy_id": true,
+                    "tags_all": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {
+                    "tags_all": {}
+                }
+            }
+        }
+    ],
+    "configuration": {
+        "provider_config": {
+            "aws": {
+                "name": "aws",
+                "full_name": "registry.terraform.io/hashicorp/aws"
+            }
+        },
+        "root_module": {
+            "resources": [
+                {
+                    "address": "aws_iam_policy.policy",
+                    "mode": "managed",
+                    "type": "aws_iam_policy",
+                    "name": "policy",
+                    "provider_config_key": "aws",
+                    "expressions": {
+                        "description": {
+                            "constant_value": "My test policy"
+                        },
+                        "name": {
+                            "constant_value": "test_policy"
+                        },
+                        "path": {
+                            "constant_value": "/"
+                        },
+                        "policy": {}
+                    },
+                    "schema_version": 0
+                }
+            ]
+        }
+    },
+    "timestamp": "2023-12-05T19:48:13Z"
+}

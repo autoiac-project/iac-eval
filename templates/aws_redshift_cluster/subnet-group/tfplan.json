@@ -1,0 +1,675 @@
+{
+    "format_version": "1.2",
+    "terraform_version": "1.6.6",
+    "planned_values": {
+        "root_module": {
+            "resources": [
+                {
+                    "address": "aws_redshift_cluster.example",
+                    "mode": "managed",
+                    "type": "aws_redshift_cluster",
+                    "name": "example",
+                    "provider_name": "registry.terraform.io/hashicorp/aws",
+                    "schema_version": 0,
+                    "values": {
+                        "allow_version_upgrade": true,
+                        "apply_immediately": false,
+                        "automated_snapshot_retention_period": 1,
+                        "availability_zone_relocation_enabled": null,
+                        "cluster_identifier": "tf-redshift-cluster",
+                        "cluster_type": "single-node",
+                        "cluster_version": "1.0",
+                        "database_name": "mydb",
+                        "elastic_ip": null,
+                        "encrypted": false,
+                        "final_snapshot_identifier": null,
+                        "logging": [],
+                        "maintenance_track_name": "current",
+                        "manage_master_password": null,
+                        "manual_snapshot_retention_period": -1,
+                        "master_password": "Mustbe8characters",
+                        "master_username": "exampleuser",
+                        "node_type": "ra3.xlplus",
+                        "number_of_nodes": 1,
+                        "owner_account": null,
+                        "port": 5439,
+                        "publicly_accessible": true,
+                        "skip_final_snapshot": true,
+                        "snapshot_arn": null,
+                        "snapshot_cluster_identifier": null,
+                        "snapshot_copy": [],
+                        "snapshot_identifier": null,
+                        "tags": null,
+                        "timeouts": null
+                    },
+                    "sensitive_values": {
+                        "cluster_nodes": [],
+                        "iam_roles": [],
+                        "logging": [],
+                        "snapshot_copy": [],
+                        "tags_all": {},
+                        "vpc_security_group_ids": []
+                    }
+                },
+                {
+                    "address": "aws_redshift_endpoint_access.example",
+                    "mode": "managed",
+                    "type": "aws_redshift_endpoint_access",
+                    "name": "example",
+                    "provider_name": "registry.terraform.io/hashicorp/aws",
+                    "schema_version": 0,
+                    "values": {
+                        "cluster_identifier": "tf-redshift-cluster",
+                        "endpoint_name": "example"
+                    },
+                    "sensitive_values": {
+                        "vpc_endpoint": [],
+                        "vpc_security_group_ids": []
+                    }
+                },
+                {
+                    "address": "aws_redshift_subnet_group.foobar",
+                    "mode": "managed",
+                    "type": "aws_redshift_subnet_group",
+                    "name": "foobar",
+                    "provider_name": "registry.terraform.io/hashicorp/aws",
+                    "schema_version": 0,
+                    "values": {
+                        "description": "Managed by Terraform",
+                        "name": "foo",
+                        "tags": {
+                            "environment": "Production"
+                        },
+                        "tags_all": {
+                            "environment": "Production"
+                        }
+                    },
+                    "sensitive_values": {
+                        "subnet_ids": [],
+                        "tags": {},
+                        "tags_all": {}
+                    }
+                },
+                {
+                    "address": "aws_subnet.bar",
+                    "mode": "managed",
+                    "type": "aws_subnet",
+                    "name": "bar",
+                    "provider_name": "registry.terraform.io/hashicorp/aws",
+                    "schema_version": 1,
+                    "values": {
+                        "assign_ipv6_address_on_creation": false,
+                        "availability_zone": "us-east-1b",
+                        "cidr_block": "10.1.2.0/24",
+                        "customer_owned_ipv4_pool": null,
+                        "enable_dns64": false,
+                        "enable_lni_at_device_index": null,
+                        "enable_resource_name_dns_a_record_on_launch": false,
+                        "enable_resource_name_dns_aaaa_record_on_launch": false,
+                        "ipv6_cidr_block": null,
+                        "ipv6_native": false,
+                        "map_customer_owned_ip_on_launch": null,
+                        "map_public_ip_on_launch": false,
+                        "outpost_arn": null,
+                        "tags": {
+                            "Name": "tf-dbsubnet-test-2"
+                        },
+                        "tags_all": {
+                            "Name": "tf-dbsubnet-test-2"
+                        },
+                        "timeouts": null
+                    },
+                    "sensitive_values": {
+                        "tags": {},
+                        "tags_all": {}
+                    }
+                },
+                {
+                    "address": "aws_subnet.foo",
+                    "mode": "managed",
+                    "type": "aws_subnet",
+                    "name": "foo",
+                    "provider_name": "registry.terraform.io/hashicorp/aws",
+                    "schema_version": 1,
+                    "values": {
+                        "assign_ipv6_address_on_creation": false,
+                        "availability_zone": "us-east-1a",
+                        "cidr_block": "10.1.1.0/24",
+                        "customer_owned_ipv4_pool": null,
+                        "enable_dns64": false,
+                        "enable_lni_at_device_index": null,
+                        "enable_resource_name_dns_a_record_on_launch": false,
+                        "enable_resource_name_dns_aaaa_record_on_launch": false,
+                        "ipv6_cidr_block": null,
+                        "ipv6_native": false,
+                        "map_customer_owned_ip_on_launch": null,
+                        "map_public_ip_on_launch": false,
+                        "outpost_arn": null,
+                        "tags": {
+                            "Name": "tf-dbsubnet-test-1"
+                        },
+                        "tags_all": {
+                            "Name": "tf-dbsubnet-test-1"
+                        },
+                        "timeouts": null
+                    },
+                    "sensitive_values": {
+                        "tags": {},
+                        "tags_all": {}
+                    }
+                },
+                {
+                    "address": "aws_vpc.foo",
+                    "mode": "managed",
+                    "type": "aws_vpc",
+                    "name": "foo",
+                    "provider_name": "registry.terraform.io/hashicorp/aws",
+                    "schema_version": 1,
+                    "values": {
+                        "assign_generated_ipv6_cidr_block": null,
+                        "cidr_block": "10.1.0.0/16",
+                        "enable_dns_support": true,
+                        "instance_tenancy": "default",
+                        "ipv4_ipam_pool_id": null,
+                        "ipv4_netmask_length": null,
+                        "ipv6_ipam_pool_id": null,
+                        "ipv6_netmask_length": null,
+                        "tags": null
+                    },
+                    "sensitive_values": {
+                        "tags_all": {}
+                    }
+                }
+            ]
+        }
+    },
+    "resource_changes": [
+        {
+            "address": "aws_redshift_cluster.example",
+            "mode": "managed",
+            "type": "aws_redshift_cluster",
+            "name": "example",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "allow_version_upgrade": true,
+                    "apply_immediately": false,
+                    "automated_snapshot_retention_period": 1,
+                    "availability_zone_relocation_enabled": null,
+                    "cluster_identifier": "tf-redshift-cluster",
+                    "cluster_type": "single-node",
+                    "cluster_version": "1.0",
+                    "database_name": "mydb",
+                    "elastic_ip": null,
+                    "encrypted": false,
+                    "final_snapshot_identifier": null,
+                    "logging": [],
+                    "maintenance_track_name": "current",
+                    "manage_master_password": null,
+                    "manual_snapshot_retention_period": -1,
+                    "master_password": "Mustbe8characters",
+                    "master_username": "exampleuser",
+                    "node_type": "ra3.xlplus",
+                    "number_of_nodes": 1,
+                    "owner_account": null,
+                    "port": 5439,
+                    "publicly_accessible": true,
+                    "skip_final_snapshot": true,
+                    "snapshot_arn": null,
+                    "snapshot_cluster_identifier": null,
+                    "snapshot_copy": [],
+                    "snapshot_identifier": null,
+                    "tags": null,
+                    "timeouts": null
+                },
+                "after_unknown": {
+                    "aqua_configuration_status": true,
+                    "arn": true,
+                    "availability_zone": true,
+                    "cluster_namespace_arn": true,
+                    "cluster_nodes": true,
+                    "cluster_parameter_group_name": true,
+                    "cluster_public_key": true,
+                    "cluster_revision_number": true,
+                    "cluster_subnet_group_name": true,
+                    "default_iam_role_arn": true,
+                    "dns_name": true,
+                    "endpoint": true,
+                    "enhanced_vpc_routing": true,
+                    "iam_roles": true,
+                    "id": true,
+                    "kms_key_id": true,
+                    "logging": [],
+                    "master_password_secret_arn": true,
+                    "master_password_secret_kms_key_id": true,
+                    "preferred_maintenance_window": true,
+                    "snapshot_copy": [],
+                    "tags_all": true,
+                    "vpc_security_group_ids": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {
+                    "cluster_nodes": [],
+                    "iam_roles": [],
+                    "logging": [],
+                    "master_password": true,
+                    "snapshot_copy": [],
+                    "tags_all": {},
+                    "vpc_security_group_ids": []
+                }
+            }
+        },
+        {
+            "address": "aws_redshift_endpoint_access.example",
+            "mode": "managed",
+            "type": "aws_redshift_endpoint_access",
+            "name": "example",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "cluster_identifier": "tf-redshift-cluster",
+                    "endpoint_name": "example"
+                },
+                "after_unknown": {
+                    "address": true,
+                    "id": true,
+                    "port": true,
+                    "resource_owner": true,
+                    "subnet_group_name": true,
+                    "vpc_endpoint": true,
+                    "vpc_security_group_ids": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {
+                    "vpc_endpoint": [],
+                    "vpc_security_group_ids": []
+                }
+            }
+        },
+        {
+            "address": "aws_redshift_subnet_group.foobar",
+            "mode": "managed",
+            "type": "aws_redshift_subnet_group",
+            "name": "foobar",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "description": "Managed by Terraform",
+                    "name": "foo",
+                    "tags": {
+                        "environment": "Production"
+                    },
+                    "tags_all": {
+                        "environment": "Production"
+                    }
+                },
+                "after_unknown": {
+                    "arn": true,
+                    "id": true,
+                    "subnet_ids": true,
+                    "tags": {},
+                    "tags_all": {}
+                },
+                "before_sensitive": false,
+                "after_sensitive": {
+                    "subnet_ids": [],
+                    "tags": {},
+                    "tags_all": {}
+                }
+            }
+        },
+        {
+            "address": "aws_subnet.bar",
+            "mode": "managed",
+            "type": "aws_subnet",
+            "name": "bar",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "assign_ipv6_address_on_creation": false,
+                    "availability_zone": "us-east-1b",
+                    "cidr_block": "10.1.2.0/24",
+                    "customer_owned_ipv4_pool": null,
+                    "enable_dns64": false,
+                    "enable_lni_at_device_index": null,
+                    "enable_resource_name_dns_a_record_on_launch": false,
+                    "enable_resource_name_dns_aaaa_record_on_launch": false,
+                    "ipv6_cidr_block": null,
+                    "ipv6_native": false,
+                    "map_customer_owned_ip_on_launch": null,
+                    "map_public_ip_on_launch": false,
+                    "outpost_arn": null,
+                    "tags": {
+                        "Name": "tf-dbsubnet-test-2"
+                    },
+                    "tags_all": {
+                        "Name": "tf-dbsubnet-test-2"
+                    },
+                    "timeouts": null
+                },
+                "after_unknown": {
+                    "arn": true,
+                    "availability_zone_id": true,
+                    "id": true,
+                    "ipv6_cidr_block_association_id": true,
+                    "owner_id": true,
+                    "private_dns_hostname_type_on_launch": true,
+                    "tags": {},
+                    "tags_all": {},
+                    "vpc_id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {
+                    "tags": {},
+                    "tags_all": {}
+                }
+            }
+        },
+        {
+            "address": "aws_subnet.foo",
+            "mode": "managed",
+            "type": "aws_subnet",
+            "name": "foo",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "assign_ipv6_address_on_creation": false,
+                    "availability_zone": "us-east-1a",
+                    "cidr_block": "10.1.1.0/24",
+                    "customer_owned_ipv4_pool": null,
+                    "enable_dns64": false,
+                    "enable_lni_at_device_index": null,
+                    "enable_resource_name_dns_a_record_on_launch": false,
+                    "enable_resource_name_dns_aaaa_record_on_launch": false,
+                    "ipv6_cidr_block": null,
+                    "ipv6_native": false,
+                    "map_customer_owned_ip_on_launch": null,
+                    "map_public_ip_on_launch": false,
+                    "outpost_arn": null,
+                    "tags": {
+                        "Name": "tf-dbsubnet-test-1"
+                    },
+                    "tags_all": {
+                        "Name": "tf-dbsubnet-test-1"
+                    },
+                    "timeouts": null
+                },
+                "after_unknown": {
+                    "arn": true,
+                    "availability_zone_id": true,
+                    "id": true,
+                    "ipv6_cidr_block_association_id": true,
+                    "owner_id": true,
+                    "private_dns_hostname_type_on_launch": true,
+                    "tags": {},
+                    "tags_all": {},
+                    "vpc_id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {
+                    "tags": {},
+                    "tags_all": {}
+                }
+            }
+        },
+        {
+            "address": "aws_vpc.foo",
+            "mode": "managed",
+            "type": "aws_vpc",
+            "name": "foo",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "assign_generated_ipv6_cidr_block": null,
+                    "cidr_block": "10.1.0.0/16",
+                    "enable_dns_support": true,
+                    "instance_tenancy": "default",
+                    "ipv4_ipam_pool_id": null,
+                    "ipv4_netmask_length": null,
+                    "ipv6_ipam_pool_id": null,
+                    "ipv6_netmask_length": null,
+                    "tags": null
+                },
+                "after_unknown": {
+                    "arn": true,
+                    "default_network_acl_id": true,
+                    "default_route_table_id": true,
+                    "default_security_group_id": true,
+                    "dhcp_options_id": true,
+                    "enable_dns_hostnames": true,
+                    "enable_network_address_usage_metrics": true,
+                    "id": true,
+                    "ipv6_association_id": true,
+                    "ipv6_cidr_block": true,
+                    "ipv6_cidr_block_network_border_group": true,
+                    "main_route_table_id": true,
+                    "owner_id": true,
+                    "tags_all": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {
+                    "tags_all": {}
+                }
+            }
+        }
+    ],
+    "configuration": {
+        "provider_config": {
+            "aws": {
+                "name": "aws",
+                "full_name": "registry.terraform.io/hashicorp/aws"
+            }
+        },
+        "root_module": {
+            "resources": [
+                {
+                    "address": "aws_redshift_cluster.example",
+                    "mode": "managed",
+                    "type": "aws_redshift_cluster",
+                    "name": "example",
+                    "provider_config_key": "aws",
+                    "expressions": {
+                        "cluster_identifier": {
+                            "constant_value": "tf-redshift-cluster"
+                        },
+                        "cluster_type": {
+                            "constant_value": "single-node"
+                        },
+                        "database_name": {
+                            "constant_value": "mydb"
+                        },
+                        "master_password": {
+                            "constant_value": "Mustbe8characters"
+                        },
+                        "master_username": {
+                            "constant_value": "exampleuser"
+                        },
+                        "node_type": {
+                            "constant_value": "ra3.xlplus"
+                        },
+                        "skip_final_snapshot": {
+                            "constant_value": true
+                        }
+                    },
+                    "schema_version": 0
+                },
+                {
+                    "address": "aws_redshift_endpoint_access.example",
+                    "mode": "managed",
+                    "type": "aws_redshift_endpoint_access",
+                    "name": "example",
+                    "provider_config_key": "aws",
+                    "expressions": {
+                        "cluster_identifier": {
+                            "references": [
+                                "aws_redshift_cluster.example.cluster_identifier",
+                                "aws_redshift_cluster.example"
+                            ]
+                        },
+                        "endpoint_name": {
+                            "constant_value": "example"
+                        },
+                        "subnet_group_name": {
+                            "references": [
+                                "aws_redshift_subnet_group.foobar.id",
+                                "aws_redshift_subnet_group.foobar"
+                            ]
+                        }
+                    },
+                    "schema_version": 0
+                },
+                {
+                    "address": "aws_redshift_subnet_group.foobar",
+                    "mode": "managed",
+                    "type": "aws_redshift_subnet_group",
+                    "name": "foobar",
+                    "provider_config_key": "aws",
+                    "expressions": {
+                        "name": {
+                            "constant_value": "foo"
+                        },
+                        "subnet_ids": {
+                            "references": [
+                                "aws_subnet.foo.id",
+                                "aws_subnet.foo",
+                                "aws_subnet.bar.id",
+                                "aws_subnet.bar"
+                            ]
+                        },
+                        "tags": {
+                            "constant_value": {
+                                "environment": "Production"
+                            }
+                        }
+                    },
+                    "schema_version": 0
+                },
+                {
+                    "address": "aws_subnet.bar",
+                    "mode": "managed",
+                    "type": "aws_subnet",
+                    "name": "bar",
+                    "provider_config_key": "aws",
+                    "expressions": {
+                        "availability_zone": {
+                            "constant_value": "us-east-1b"
+                        },
+                        "cidr_block": {
+                            "constant_value": "10.1.2.0/24"
+                        },
+                        "tags": {
+                            "constant_value": {
+                                "Name": "tf-dbsubnet-test-2"
+                            }
+                        },
+                        "vpc_id": {
+                            "references": [
+                                "aws_vpc.foo.id",
+                                "aws_vpc.foo"
+                            ]
+                        }
+                    },
+                    "schema_version": 1
+                },
+                {
+                    "address": "aws_subnet.foo",
+                    "mode": "managed",
+                    "type": "aws_subnet",
+                    "name": "foo",
+                    "provider_config_key": "aws",
+                    "expressions": {
+                        "availability_zone": {
+                            "constant_value": "us-east-1a"
+                        },
+                        "cidr_block": {
+                            "constant_value": "10.1.1.0/24"
+                        },
+                        "tags": {
+                            "constant_value": {
+                                "Name": "tf-dbsubnet-test-1"
+                            }
+                        },
+                        "vpc_id": {
+                            "references": [
+                                "aws_vpc.foo.id",
+                                "aws_vpc.foo"
+                            ]
+                        }
+                    },
+                    "schema_version": 1
+                },
+                {
+                    "address": "aws_vpc.foo",
+                    "mode": "managed",
+                    "type": "aws_vpc",
+                    "name": "foo",
+                    "provider_config_key": "aws",
+                    "expressions": {
+                        "cidr_block": {
+                            "constant_value": "10.1.0.0/16"
+                        }
+                    },
+                    "schema_version": 1
+                }
+            ]
+        }
+    },
+    "relevant_attributes": [
+        {
+            "resource": "aws_vpc.foo",
+            "attribute": [
+                "id"
+            ]
+        },
+        {
+            "resource": "aws_subnet.foo",
+            "attribute": [
+                "id"
+            ]
+        },
+        {
+            "resource": "aws_subnet.bar",
+            "attribute": [
+                "id"
+            ]
+        },
+        {
+            "resource": "aws_redshift_subnet_group.foobar",
+            "attribute": [
+                "id"
+            ]
+        },
+        {
+            "resource": "aws_redshift_cluster.example",
+            "attribute": [
+                "cluster_identifier"
+            ]
+        }
+    ],
+    "timestamp": "2024-01-04T04:13:46Z",
+    "errored": false
+}

@@ -1,0 +1,108 @@
+{
+    "format_version": "1.2",
+    "terraform_version": "1.5.7",
+    "planned_values": {
+        "root_module": {
+            "resources": [
+                {
+                    "address": "aws_chime_voice_connector.test",
+                    "mode": "managed",
+                    "type": "aws_chime_voice_connector",
+                    "name": "test",
+                    "provider_name": "registry.terraform.io/hashicorp/aws",
+                    "schema_version": 0,
+                    "values": {
+                        "aws_region": "us-east-1",
+                        "name": "connector-test-1",
+                        "require_encryption": true,
+                        "tags": {
+                            "test-tag": "{insert tag}"
+                        },
+                        "tags_all": {
+                            "test-tag": "{insert tag}"
+                        }
+                    },
+                    "sensitive_values": {
+                        "tags": {},
+                        "tags_all": {}
+                    }
+                }
+            ]
+        }
+    },
+    "resource_changes": [
+        {
+            "address": "aws_chime_voice_connector.test",
+            "mode": "managed",
+            "type": "aws_chime_voice_connector",
+            "name": "test",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "aws_region": "us-east-1",
+                    "name": "connector-test-1",
+                    "require_encryption": true,
+                    "tags": {
+                        "test-tag": "{insert tag}"
+                    },
+                    "tags_all": {
+                        "test-tag": "{insert tag}"
+                    }
+                },
+                "after_unknown": {
+                    "arn": true,
+                    "id": true,
+                    "outbound_host_name": true,
+                    "tags": {},
+                    "tags_all": {}
+                },
+                "before_sensitive": false,
+                "after_sensitive": {
+                    "tags": {},
+                    "tags_all": {}
+                }
+            }
+        }
+    ],
+    "configuration": {
+        "provider_config": {
+            "aws": {
+                "name": "aws",
+                "full_name": "registry.terraform.io/hashicorp/aws"
+            }
+        },
+        "root_module": {
+            "resources": [
+                {
+                    "address": "aws_chime_voice_connector.test",
+                    "mode": "managed",
+                    "type": "aws_chime_voice_connector",
+                    "name": "test",
+                    "provider_config_key": "aws",
+                    "expressions": {
+                        "aws_region": {
+                            "constant_value": "us-east-1"
+                        },
+                        "name": {
+                            "constant_value": "connector-test-1"
+                        },
+                        "require_encryption": {
+                            "constant_value": true
+                        },
+                        "tags": {
+                            "constant_value": {
+                                "test-tag": "{insert tag}"
+                            }
+                        }
+                    },
+                    "schema_version": 0
+                }
+            ]
+        }
+    },
+    "timestamp": "2023-12-05T17:15:38Z"
+}

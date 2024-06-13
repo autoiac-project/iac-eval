@@ -1,0 +1,444 @@
+{
+    "format_version": "1.2",
+    "terraform_version": "1.5.7",
+    "planned_values": {
+        "root_module": {
+            "resources": [
+                {
+                    "address": "aws_vpc.main",
+                    "mode": "managed",
+                    "type": "aws_vpc",
+                    "name": "main",
+                    "provider_name": "registry.terraform.io/hashicorp/aws",
+                    "schema_version": 1,
+                    "values": {
+                        "assign_generated_ipv6_cidr_block": null,
+                        "enable_dns_hostnames": true,
+                        "enable_dns_support": true,
+                        "enable_network_address_usage_metrics": false,
+                        "instance_tenancy": "default",
+                        "ipv4_netmask_length": 28,
+                        "ipv6_ipam_pool_id": null,
+                        "ipv6_netmask_length": null,
+                        "tags": {
+                            "test-tag": "{insert tag}"
+                        },
+                        "tags_all": {
+                            "test-tag": "{insert tag}"
+                        }
+                    },
+                    "sensitive_values": {
+                        "tags": {},
+                        "tags_all": {}
+                    }
+                },
+                {
+                    "address": "aws_vpc_ipam.test",
+                    "mode": "managed",
+                    "type": "aws_vpc_ipam",
+                    "name": "test",
+                    "provider_name": "registry.terraform.io/hashicorp/aws",
+                    "schema_version": 0,
+                    "values": {
+                        "cascade": null,
+                        "description": null,
+                        "operating_regions": [
+                            {
+                                "region_name": "us-east-1"
+                            }
+                        ],
+                        "tags": null,
+                        "timeouts": null
+                    },
+                    "sensitive_values": {
+                        "operating_regions": [
+                            {}
+                        ],
+                        "tags_all": {}
+                    }
+                },
+                {
+                    "address": "aws_vpc_ipam_pool.test",
+                    "mode": "managed",
+                    "type": "aws_vpc_ipam_pool",
+                    "name": "test",
+                    "provider_name": "registry.terraform.io/hashicorp/aws",
+                    "schema_version": 0,
+                    "values": {
+                        "address_family": "ipv4",
+                        "allocation_default_netmask_length": null,
+                        "allocation_max_netmask_length": null,
+                        "allocation_min_netmask_length": null,
+                        "allocation_resource_tags": null,
+                        "auto_import": false,
+                        "aws_service": null,
+                        "description": null,
+                        "locale": "us-east-1",
+                        "public_ip_source": null,
+                        "publicly_advertisable": null,
+                        "source_ipam_pool_id": null,
+                        "tags": null,
+                        "timeouts": null
+                    },
+                    "sensitive_values": {
+                        "tags_all": {}
+                    }
+                },
+                {
+                    "address": "aws_vpc_ipam_pool_cidr.test",
+                    "mode": "managed",
+                    "type": "aws_vpc_ipam_pool_cidr",
+                    "name": "test",
+                    "provider_name": "registry.terraform.io/hashicorp/aws",
+                    "schema_version": 0,
+                    "values": {
+                        "cidr": "172.20.0.0/16",
+                        "cidr_authorization_context": [],
+                        "netmask_length": null,
+                        "timeouts": null
+                    },
+                    "sensitive_values": {
+                        "cidr_authorization_context": []
+                    }
+                }
+            ]
+        }
+    },
+    "resource_changes": [
+        {
+            "address": "aws_vpc.main",
+            "mode": "managed",
+            "type": "aws_vpc",
+            "name": "main",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "assign_generated_ipv6_cidr_block": null,
+                    "enable_dns_hostnames": true,
+                    "enable_dns_support": true,
+                    "enable_network_address_usage_metrics": false,
+                    "instance_tenancy": "default",
+                    "ipv4_netmask_length": 28,
+                    "ipv6_ipam_pool_id": null,
+                    "ipv6_netmask_length": null,
+                    "tags": {
+                        "test-tag": "{insert tag}"
+                    },
+                    "tags_all": {
+                        "test-tag": "{insert tag}"
+                    }
+                },
+                "after_unknown": {
+                    "arn": true,
+                    "cidr_block": true,
+                    "default_network_acl_id": true,
+                    "default_route_table_id": true,
+                    "default_security_group_id": true,
+                    "dhcp_options_id": true,
+                    "id": true,
+                    "ipv4_ipam_pool_id": true,
+                    "ipv6_association_id": true,
+                    "ipv6_cidr_block": true,
+                    "ipv6_cidr_block_network_border_group": true,
+                    "main_route_table_id": true,
+                    "owner_id": true,
+                    "tags": {},
+                    "tags_all": {}
+                },
+                "before_sensitive": false,
+                "after_sensitive": {
+                    "tags": {},
+                    "tags_all": {}
+                }
+            }
+        },
+        {
+            "address": "aws_vpc_ipam.test",
+            "mode": "managed",
+            "type": "aws_vpc_ipam",
+            "name": "test",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "cascade": null,
+                    "description": null,
+                    "operating_regions": [
+                        {
+                            "region_name": "us-east-1"
+                        }
+                    ],
+                    "tags": null,
+                    "timeouts": null
+                },
+                "after_unknown": {
+                    "arn": true,
+                    "default_resource_discovery_association_id": true,
+                    "default_resource_discovery_id": true,
+                    "id": true,
+                    "operating_regions": [
+                        {}
+                    ],
+                    "private_default_scope_id": true,
+                    "public_default_scope_id": true,
+                    "scope_count": true,
+                    "tags_all": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {
+                    "operating_regions": [
+                        {}
+                    ],
+                    "tags_all": {}
+                }
+            }
+        },
+        {
+            "address": "aws_vpc_ipam_pool.test",
+            "mode": "managed",
+            "type": "aws_vpc_ipam_pool",
+            "name": "test",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "address_family": "ipv4",
+                    "allocation_default_netmask_length": null,
+                    "allocation_max_netmask_length": null,
+                    "allocation_min_netmask_length": null,
+                    "allocation_resource_tags": null,
+                    "auto_import": false,
+                    "aws_service": null,
+                    "description": null,
+                    "locale": "us-east-1",
+                    "public_ip_source": null,
+                    "publicly_advertisable": null,
+                    "source_ipam_pool_id": null,
+                    "tags": null,
+                    "timeouts": null
+                },
+                "after_unknown": {
+                    "arn": true,
+                    "id": true,
+                    "ipam_scope_id": true,
+                    "ipam_scope_type": true,
+                    "pool_depth": true,
+                    "state": true,
+                    "tags_all": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {
+                    "tags_all": {}
+                }
+            }
+        },
+        {
+            "address": "aws_vpc_ipam_pool_cidr.test",
+            "mode": "managed",
+            "type": "aws_vpc_ipam_pool_cidr",
+            "name": "test",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "cidr": "172.20.0.0/16",
+                    "cidr_authorization_context": [],
+                    "netmask_length": null,
+                    "timeouts": null
+                },
+                "after_unknown": {
+                    "cidr_authorization_context": [],
+                    "id": true,
+                    "ipam_pool_cidr_id": true,
+                    "ipam_pool_id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {
+                    "cidr_authorization_context": []
+                }
+            }
+        }
+    ],
+    "prior_state": {
+        "format_version": "1.0",
+        "terraform_version": "1.5.7",
+        "values": {
+            "root_module": {
+                "resources": [
+                    {
+                        "address": "data.aws_region.current",
+                        "mode": "data",
+                        "type": "aws_region",
+                        "name": "current",
+                        "provider_name": "registry.terraform.io/hashicorp/aws",
+                        "schema_version": 0,
+                        "values": {
+                            "description": "US East (N. Virginia)",
+                            "endpoint": "ec2.us-east-1.amazonaws.com",
+                            "id": "us-east-1",
+                            "name": "us-east-1"
+                        },
+                        "sensitive_values": {}
+                    }
+                ]
+            }
+        }
+    },
+    "configuration": {
+        "provider_config": {
+            "aws": {
+                "name": "aws",
+                "full_name": "registry.terraform.io/hashicorp/aws"
+            }
+        },
+        "root_module": {
+            "resources": [
+                {
+                    "address": "aws_vpc.main",
+                    "mode": "managed",
+                    "type": "aws_vpc",
+                    "name": "main",
+                    "provider_config_key": "aws",
+                    "expressions": {
+                        "enable_dns_hostnames": {
+                            "constant_value": true
+                        },
+                        "enable_dns_support": {
+                            "constant_value": true
+                        },
+                        "enable_network_address_usage_metrics": {
+                            "constant_value": false
+                        },
+                        "instance_tenancy": {
+                            "constant_value": "default"
+                        },
+                        "ipv4_ipam_pool_id": {
+                            "references": [
+                                "aws_vpc_ipam_pool.test.id",
+                                "aws_vpc_ipam_pool.test"
+                            ]
+                        },
+                        "ipv4_netmask_length": {
+                            "constant_value": 28
+                        },
+                        "tags": {
+                            "constant_value": {
+                                "test-tag": "{insert tag}"
+                            }
+                        }
+                    },
+                    "schema_version": 1,
+                    "depends_on": [
+                        "aws_vpc_ipam_pool_cidr.test"
+                    ]
+                },
+                {
+                    "address": "aws_vpc_ipam.test",
+                    "mode": "managed",
+                    "type": "aws_vpc_ipam",
+                    "name": "test",
+                    "provider_config_key": "aws",
+                    "expressions": {
+                        "operating_regions": [
+                            {
+                                "region_name": {
+                                    "references": [
+                                        "data.aws_region.current.name",
+                                        "data.aws_region.current"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    "schema_version": 0
+                },
+                {
+                    "address": "aws_vpc_ipam_pool.test",
+                    "mode": "managed",
+                    "type": "aws_vpc_ipam_pool",
+                    "name": "test",
+                    "provider_config_key": "aws",
+                    "expressions": {
+                        "address_family": {
+                            "constant_value": "ipv4"
+                        },
+                        "ipam_scope_id": {
+                            "references": [
+                                "aws_vpc_ipam.test.private_default_scope_id",
+                                "aws_vpc_ipam.test"
+                            ]
+                        },
+                        "locale": {
+                            "references": [
+                                "data.aws_region.current.name",
+                                "data.aws_region.current"
+                            ]
+                        }
+                    },
+                    "schema_version": 0
+                },
+                {
+                    "address": "aws_vpc_ipam_pool_cidr.test",
+                    "mode": "managed",
+                    "type": "aws_vpc_ipam_pool_cidr",
+                    "name": "test",
+                    "provider_config_key": "aws",
+                    "expressions": {
+                        "cidr": {
+                            "constant_value": "172.20.0.0/16"
+                        },
+                        "ipam_pool_id": {
+                            "references": [
+                                "aws_vpc_ipam_pool.test.id",
+                                "aws_vpc_ipam_pool.test"
+                            ]
+                        }
+                    },
+                    "schema_version": 0
+                },
+                {
+                    "address": "data.aws_region.current",
+                    "mode": "data",
+                    "type": "aws_region",
+                    "name": "current",
+                    "provider_config_key": "aws",
+                    "schema_version": 0
+                }
+            ]
+        }
+    },
+    "relevant_attributes": [
+        {
+            "resource": "data.aws_region.current",
+            "attribute": [
+                "name"
+            ]
+        },
+        {
+            "resource": "aws_vpc_ipam.test",
+            "attribute": [
+                "private_default_scope_id"
+            ]
+        },
+        {
+            "resource": "aws_vpc_ipam_pool.test",
+            "attribute": [
+                "id"
+            ]
+        }
+    ],
+    "timestamp": "2023-12-14T02:00:50Z"
+}

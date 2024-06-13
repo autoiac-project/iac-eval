@@ -1,0 +1,66 @@
+Here are a few examples:
+
+Example prompt 1: Create an AWS RDS instance (with an instance class of db.t2.micro, and don't create a final snapshot before eventual deletion) with randomly generated id and password
+Example output 1: Let's think step by step. First, let's reason about the resources needed: this would be an AWS RDS instance (aws_db_instance), and resources to generate a random id and password. Second, we fill in the attributes of each resource, starting with those explicitly and implicitly mentioned in the prompt, and followed by others: for example, for the aws_db_instance, we need to set the "instance_class" attribute to "db.t2.micro", and the "skip_final_snapshot" attribute to true. Finally, we connect the resources together, as needed: here "identifier" should be connected to the "random_id" resource, and "password" should be connected to the "random_password" resource
+```hcl
+resource "random_id" "suffix" {
+  byte_length = 4
+}
+
+resource "random_password" "db" {
+  length  = 16
+  special = false
+}
+
+resource "aws_db_instance" "test" {
+  identifier          = "metricbeat-test-${random_id.suffix.hex}"
+  allocated_storage   = 20 // Gigabytes
+  engine              = "mysql"
+  instance_class      = "db.t2.micro"
+  db_name                = "metricbeattest"
+  username            = "foo"
+  password            = random_password.db.result
+  skip_final_snapshot = true // Required for cleanup
+}
+```
+
+Example prompt 2: Create an 20GB MySQL instance on aws with randomly generated id and password
+Example output 2: Let's think step by step. First, let's reason about the resources needed: this would be an AWS RDS instance (aws_db_instance), and resources to generate a random id and password. Second, we fill in the attributes of each resource, starting with those explicitly and implicitly mentioned in the prompt, and followed by others: for example, for the aws_db_instance, we need to set the "engine" attribute to "mysql". Finally, we connect the resources together, as needed: here "identifier" should be connected to the "random_id" resource, and "password" should be connected to the "random_password" resource
+```hcl
+resource "random_id" "suffix" {
+  byte_length = 4
+}
+
+resource "random_password" "db" {
+  length  = 16
+  special = false
+}
+
+resource "aws_db_instance" "test" {
+  identifier          = "metricbeat-test-${random_id.suffix.hex}"
+  allocated_storage   = 20 // Gigabytes
+  engine              = "mysql"
+  instance_class      = "db.t2.micro"
+  db_name                = "metricbeattest"
+  username            = "foo"
+  password            = random_password.db.result
+  skip_final_snapshot = true // Required for cleanup
+}
+```
+
+Example prompt 3: create a AWS EFS, and create a replica of an this created EFS file system using regional storage in us-west-2
+Example output 3: Let's think step by step. First, let's reason about the resources needed: this would be an AWS EFS replication resource (aws_efs_replication_configuration), and  the AWS EFS resource itself. Second, we fill in the attributes of each resource, starting with those explicitly and implicitly mentioned in the prompt, and followed by others: for example, for the aws_efs_replication_configuration, we need to set the "availability_zone_name" attribute to an availability zone that will be within the region specificed in the prompt, such as "us-west-2b". Finally, we connect the resources together, as needed: here "source_file_system_id" should be connected to the "aws_efs_file_system" resource
+```hcl
+resource "aws_efs_file_system" "example" {}
+
+resource "aws_efs_replication_configuration" "example" {
+  source_file_system_id = aws_efs_file_system.example.id
+
+  destination {
+    availability_zone_name = "us-west-2b"
+    kms_key_id             = "1234abcd-12ab-34cd-56ef-1234567890ab"
+  }
+}
+```
+
+Here is the actual prompt to answer. Let's think step by step:

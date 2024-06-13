@@ -1,0 +1,136 @@
+{
+    "format_version": "1.2",
+    "terraform_version": "1.5.7",
+    "planned_values": {
+        "root_module": {
+            "resources": [
+                {
+                    "address": "aws_vpc.main",
+                    "mode": "managed",
+                    "type": "aws_vpc",
+                    "name": "main",
+                    "provider_name": "registry.terraform.io/hashicorp/aws",
+                    "schema_version": 1,
+                    "values": {
+                        "assign_generated_ipv6_cidr_block": null,
+                        "cidr_block": "10.0.0.0/16",
+                        "enable_dns_hostnames": true,
+                        "enable_dns_support": true,
+                        "enable_network_address_usage_metrics": false,
+                        "instance_tenancy": "default",
+                        "ipv4_ipam_pool_id": null,
+                        "ipv4_netmask_length": null,
+                        "ipv6_ipam_pool_id": null,
+                        "ipv6_netmask_length": null,
+                        "tags": {
+                            "test-tag": "{insert tag}"
+                        },
+                        "tags_all": {
+                            "test-tag": "{insert tag}"
+                        }
+                    },
+                    "sensitive_values": {
+                        "tags": {},
+                        "tags_all": {}
+                    }
+                }
+            ]
+        }
+    },
+    "resource_changes": [
+        {
+            "address": "aws_vpc.main",
+            "mode": "managed",
+            "type": "aws_vpc",
+            "name": "main",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "assign_generated_ipv6_cidr_block": null,
+                    "cidr_block": "10.0.0.0/16",
+                    "enable_dns_hostnames": true,
+                    "enable_dns_support": true,
+                    "enable_network_address_usage_metrics": false,
+                    "instance_tenancy": "default",
+                    "ipv4_ipam_pool_id": null,
+                    "ipv4_netmask_length": null,
+                    "ipv6_ipam_pool_id": null,
+                    "ipv6_netmask_length": null,
+                    "tags": {
+                        "test-tag": "{insert tag}"
+                    },
+                    "tags_all": {
+                        "test-tag": "{insert tag}"
+                    }
+                },
+                "after_unknown": {
+                    "arn": true,
+                    "default_network_acl_id": true,
+                    "default_route_table_id": true,
+                    "default_security_group_id": true,
+                    "dhcp_options_id": true,
+                    "id": true,
+                    "ipv6_association_id": true,
+                    "ipv6_cidr_block": true,
+                    "ipv6_cidr_block_network_border_group": true,
+                    "main_route_table_id": true,
+                    "owner_id": true,
+                    "tags": {},
+                    "tags_all": {}
+                },
+                "before_sensitive": false,
+                "after_sensitive": {
+                    "tags": {},
+                    "tags_all": {}
+                }
+            }
+        }
+    ],
+    "configuration": {
+        "provider_config": {
+            "aws": {
+                "name": "aws",
+                "full_name": "registry.terraform.io/hashicorp/aws"
+            }
+        },
+        "root_module": {
+            "resources": [
+                {
+                    "address": "aws_vpc.main",
+                    "mode": "managed",
+                    "type": "aws_vpc",
+                    "name": "main",
+                    "provider_config_key": "aws",
+                    "expressions": {
+                        "cidr_block": {
+                            "constant_value": "10.0.0.0/16"
+                        },
+                        "enable_dns_hostnames": {
+                            "constant_value": true
+                        },
+                        "enable_dns_support": {
+                            "constant_value": true
+                        },
+                        "enable_network_address_usage_metrics": {
+                            "constant_value": false
+                        },
+                        "instance_tenancy": {
+                            "constant_value": "default"
+                        },
+                        "tags": {
+                            "constant_value": {
+                                "test-tag": "{insert tag}"
+                            }
+                        }
+                    },
+                    "schema_version": 1
+                }
+            ]
+        }
+    },
+    "timestamp": "2023-12-08T17:49:27Z"
+}
