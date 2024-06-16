@@ -366,6 +366,7 @@ def findkeys(node, kv):
 def write_to_terraform(result, terraform_dir="./misc/complete-dataset-measurement/terraform_config"):
     # define the path to the main.tf file
     terraform_file_path = terraform_dir + "/complete-measurement-main.tf"
+    os.makedirs(terraform_dir, exist_ok=True)
     # open the file in write mode ('w') and write the result to it
     # print("CWD", os.getcwd())
     print("CWD: {}".format(os.getcwd()))
