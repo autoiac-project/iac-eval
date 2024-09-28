@@ -1,4 +1,4 @@
-<p align="center">| <a href="https://huggingface.co/datasets/autoiac-project/iac-eval"><u>Dataset</u></a> | 🏆 <a href="https://huggingface.co/datasets/autoiac-project/iac-eval"><u>Leaderboard TBD</u></a> | 📖 <a href="https://huggingface.co/datasets/autoiac-project/iac-eval"><u>Paper TBD</u></a> |</p>
+<p align="center">| <a href="https://huggingface.co/datasets/autoiac-project/iac-eval"><u>Dataset</u></a> | 🏆 <a href="https://huggingface.co/datasets/autoiac-project/iac-eval"><u>Leaderboard TBD</u></a> | 📖 <a href="https://www.cs-pk.com/preprint-iac-eval.pdf"><u>NeurIPS 2024 Paper</u></a> |</p>
 
 # IaC-Eval---first edition
 
