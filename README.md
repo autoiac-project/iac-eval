@@ -6,6 +6,8 @@ IaC-Eval is a comprehensive framework for quantitatively evaluating the capabili
 
 IaC-Eval also provides the first human-curated and challenging Infrastructure-as-Code (IaC) dataset containing 458 questions ranging from simple to difficult across various cloud services (targeting AWS for now), which can be found in our [HuggingFace repository](https://huggingface.co/datasets/autoiac-project/iac-eval).
 
+**We are actively developing and patching the project. However, as of now, IaC-Eval is not production-ready.** 
+
 ## Installation
 
 1. Install Terraform (also [install AWS CLI and setup credentials](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-build#prerequisites))
