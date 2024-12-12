@@ -2,7 +2,7 @@
 
 # IaC-Eval---first edition
 
-IaC-Eval is a comprehensive framework for quantitatively evaluating the capabilities of large language models in IaC code generation. Infrastructure-as-Code (IaC) is an important component of cloud computing, that allows the definition of cloud infrastructure in high-level programs. Our framework targets Terraform specifically for now. We leave integration of other IaC tools as future work. 
+IaC-Eval is a comprehensive framework for quantitatively evaluating the capabilities of large language models in cloud IaC code generation. Infrastructure-as-Code (IaC) is an important component of cloud computing, that allows the definition of cloud infrastructure in high-level programs. Our framework targets Terraform specifically for now. We leave integration of other IaC tools as future work. 
 
 IaC-Eval also provides the first human-curated and challenging Infrastructure-as-Code (IaC) dataset containing 458 questions ranging from simple to difficult across various cloud services (targeting AWS for now), which can be found in our [HuggingFace repository](https://huggingface.co/datasets/autoiac-project/iac-eval).
 
